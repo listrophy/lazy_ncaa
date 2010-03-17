@@ -1,0 +1,7 @@
+h1. lazy_ncaa
+
+Run this script to generate a filled-out bracket, with probabilities based entirely on historical matchups between seeds.
+
+h2. Copyright
+
+This work is licensed under the MIT license, which is found at MIT-LICENSE in this repository.
