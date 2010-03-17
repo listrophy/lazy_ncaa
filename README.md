@@ -3,6 +3,8 @@ lazy_ncaa
 
 Run this script to generate a filled-out bracket, with probabilities based entirely on historical matchups between seeds.
 
+**NOTE**: This script was written in early 2009. I haven't code-reviewed it since, so I make no claims about the (likely lack of) awesomeness of it.
+
 Example
 -------
 
@@ -95,6 +97,11 @@ Example
     Bad Tournaments: 0
 
 That last line indicates how many times the script had to "give up" since it hadn't seen a particular match-up before. For example, a 2-seed and 14-seed have never met in the past, so the script just re-starts from scratch.
+
+Disclaimer
+----------
+
+I'm not endorsing gambling. This program basically puts random numbers into buckets. Use at your own peril.
 
 Copyright
 ---------
