@@ -1,70 +1,70 @@
 #!/usr/bin/ruby
 
 TEAMS = [
-  'Kansas',
   'Ohio St.',
-  'Georgetown',
-  'Maryland',
-  'Michigan St.',
-  'Tennessee',
-  'Oklahoma St.',
-  'UNLV',
-  'N. Iowa',
-  'Georgia Tech',
-  'San Diego St.',
-  'New Mexico St.',
-  'Houston',
-  'Ohio',
-  'UC Santa Barbara',
-  'Lehigh',
+  'UNC',
   'Syracuse',
-  'Kansas St.',
-  'Pittsburgh',
-  'Vanderbilt',
-  'Butler',
-  'Xavier',
-  'BYU',
-  'Gonzaga',
-  'Florida St.',
-  'Florida',
-  'Minnesota',
-  'UTEP',
-  'Murray St.',
-  'Oakland',
-  'North Texas',
-  'Vermont',
   'Kentucky',
-  'West Virginia',
-  'New Mexico',
-  'Wisconsin',
-  'Temple',
-  'Marquette',
-  'Clemson',
-  'Texas',
-  'Wake Forest',
-  'Missouri',
+  'West VA',
+  'Xavier',
   'Washington',
-  'Cornell',
-  'Wofford',
-  'Montana',
-  'Morgan St.',
-  'E Tenn. State',
-  'Duke',
+  'George Mason',
   'Villanova',
-  'Baylor',
-  'Purdue',
-  'Texas A&M',
+  'Georgia',
+  'Marquette',
+  'Play-In 2',
+  'Princeton',
+  'Indiana St',
+  'Long Island',
+  'Play-In 1',
+  'Duke',
+  'San Diego St.',
+  'UCONN',
+  'Texas',
+  'Arizona',
+  'Cincinnati',
+  'Temple',
+  'Michigan',
+  'Tennessee',
+  'Penn St',
+  'Missouri',
+  'Memphis',
+  'Oakland',
+  'Bucknell',
+  'N. Colorado',
+  'Hampton',
+  'Kansas',
   'Notre Dame',
-  'Richmond',
-  'California',
+  'Purdue',
   'Louisville',
-  'St. Marys CA',
+  'Vanderbilt',
+  'Georgetown',
+  'Texas A&M',
+  'UNLV',
+  'Illinois',
+  'Florida St',
+  'Play-In 3',
+  'Richmond',
+  'Morehead St',
+  'St. Peter\'s',
+  'Akron',
+  'Boston U',
+  'Pittsburgh',
+  'Florida',
+  'BYU',
+  'Wisconsin',
+  'Kansas St',
+  'St. John\'s',
+  'UCLA',
+  'Butler',
   'Old Dominion',
-  'Utah St.',
-  'Siena',
-  'Sam Houston',
-  'Robert Morris',
-  'Ark-Pine Bluff'
+  'Michigan St',
+  'Gonzaga',
+  'Utah St',
+  'Belmont',
+  'Wofford',
+  'UC Santa Barb',
+  'Play-In 4'
 ]
 
 class Team
@@ -198,37 +198,37 @@ end
 class Probability
   PROBS = {
     1 => { #round 1
-      1 => {16 => [100, 100]},
-      2 => {15 => [100, 96]},
-      3 => {14 => [100, 85]},
-      4 => {13 => [100, 79]},
-      5 => {12 => [100, 66]},
-      6 => {11 => [100, 69]},
-      7 => {10 => [100, 61]},
-      8 => {9 =>  [100, 42]}
+      1 => {16 => [104, 104]},
+      2 => {15 => [104, 100]},
+      3 => {14 => [104, 88]},
+      4 => {13 => [104, 82]},
+      5 => {12 => [104, 69]},
+      6 => {11 => [104, 71]},
+      7 => {10 => [104, 62]},
+      8 => {9 =>  [104, 44]}
     },
     2 => { #round 2
       1 => {
-        8 => [46,37],
-        9 => [54,51]
+        8 => [48,39],
+        9 => [56,52]
       },
       2 => {
-        7  => [60,42],
-        10 => [36,21]
+        7  => [61,43],
+        10 => [39,23]
       },
       3 => {
-        6  => [57,32],
-        11 => [28,20]
+        6  => [58,32],
+        11 => [30,21]
       },
       4 => {
-        5  => [53,27],
-        12 => [26,16]
+        5  => [55,28],
+        12 => [27,16]
       },
       5 => {
-        13 => [13,10]
+        13 => [14,11]
       },
       6 => {
-        14 => [12,10]
+        14 => [13,11]
       },
       7 => {
         15 => [1,1]
@@ -245,19 +245,19 @@ class Probability
     },
     3 => {
       1 => {
-        4 => [36,27],
-        5 => [34,30],
-        12 => [16,16],
+        4 => [37,28],
+        5 => [35,30],
+        12 => [17,17],
         13 => [2,2]
       },
       2 => {
         3 => [33,21],
-        6 => [23,18],
-        11 => [8,7]
+        6 => [25,19],
+        11 => [9,8]
       },
       3 => {
         7 => [8,6],
-        10 => [11,7]
+        10 => [12,8]
       },
       4 => {
         8 => [5,2],
@@ -265,7 +265,7 @@ class Probability
       },
       5 => {
         8 => [2,0],
-        9 => [1,0]
+        9 => [2,1]
       },
       6 => {
         7 => [6,3],
@@ -285,8 +285,8 @@ class Probability
     },
     4 => { #round 4
       1 => {
-        2 => [35,18],
-        3 => [18,10],
+        2 => [36,18],
+        3 => [19,11],
         6 => [8,6],
         7 => [4,4],
         10 => [4,4],
@@ -294,7 +294,7 @@ class Probability
       },
       2 => {
         4 => [5,2],
-        5 => [2,0],
+        5 => [3,0],
         8 => [3,2],
         12 => [1,1]
       },
@@ -310,6 +310,7 @@ class Probability
         10 => [2,2]
       },
       5 => {
+        6 => [1, 1],
         10 => [1,1]
       },
       6 => {
@@ -319,12 +320,12 @@ class Probability
         8 => [1,0]
       }
     },
-    5 => { #final four
+    5 => { #all of final four
       1 => {
-        2 => [15,10],
+        2 => [16,11],
         3 => [7,3],
         4 => [7,5],
-        5 => [3,3],
+        5 => [4,4],
         6 => [2,1],
         8 => [2,1]
       },
