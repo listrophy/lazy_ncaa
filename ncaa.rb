@@ -79,6 +79,8 @@ def generate_tournament
     rescue InvalidGameException
       bad_tournaments += 1
       # print "invalid game!\n"
+    rescue NoMethodError => e
+      # (shrug)
     end
   end
   tournament
