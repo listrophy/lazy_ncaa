@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %title NCAA Bracket Generator
+  %body
+    %h1 NCAA Bracket Generator
+    %p
+      This page will autogenerate a bracket based on the
+      tournament's historical results. That is, if seed A has beaten seed B
+      X% of the time, it will pick seed A with X% probability.
+    %p Here are your results!
+    %pre
+      %code
+        = @tournament

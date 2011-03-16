@@ -1,0 +1,1 @@
+class InvalidGameException < RuntimeError; end
