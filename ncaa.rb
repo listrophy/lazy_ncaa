@@ -98,3 +98,8 @@ get '/' do
   @tournament = generate_tournament
   haml :index
 end
+
+get '/2012' do
+  @tournament = generate_tournament
+  haml :index
+end
