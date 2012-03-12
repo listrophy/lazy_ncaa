@@ -17,7 +17,7 @@ TEAMS = [
   'Play-In 1',
 
   'Michigan St',
-  'Nissouri',
+  'Missouri',
   'Marquette',
   'Louisville',
   'New Mexico',
