@@ -1,5 +1,3 @@
-require 'pry'
-
 module LazyNcaa
   class Tournament
     def initialize

@@ -1,5 +1,5 @@
-require_relative 'teams'
-require_relative 'lib/lazy_ncaa'
+require File.expand_path('../teams', __FILE__)
+require File.expand_path('../lib/lazy_ncaa', __FILE__)
 require 'base64'
 
 def generate_tournament
