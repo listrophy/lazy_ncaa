@@ -17,9 +17,12 @@
         = @tournament
     :plain
       <script type="text/javascript">
+        var picks = '#{Base64.encode64(@tournament.to_id).strip}';
+
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-29944212-1']);
         _gaq.push(['_trackPageview']);
+        _gaq.push(['_setCustomVar', 1, 'picks', picks])
 
         (function() {
           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;

@@ -1,74 +1,6 @@
-TEAMS = [
-  'Louisville',
-  'Duke',
-  'Michigan St',
-  'St Louis',
-  'Okla St',
-  'Memphis',
-  'Creighton',
-  'Colorado St',
-  'Missouri',
-  'Cincinnati',
-  'Play-in MW 1',
-  'Oregon',
-  'New Mex St',
-  'Valparaiso',
-  'Albany',
-  'Play-In MW 2',
-
-  'Gonzaga',
-  'Ohio St',
-  'New Mexico',
-  'Kansas St',
-  'Wisconsin',
-  'Arizona',
-  'Notre Dame',
-  'Pittsburgh',
-  'Wichita St',
-  'Iowa St',
-  'Belmont',
-  'Ole Miss',
-  'Play-In W',
-  'Harvard',
-  'Iona',
-  'Southern U',
-
-  'Kansas',
-  'Georgetown',
-  'Florida',
-  'Michigan',
-  'VCU',
-  'UCLA',
-  'San Diego St',
-  'N Carolina',
-  'Villanova',
-  'Oklahoma',
-  'Minnesota',
-  'Akron',
-  'S Dakota St',
-  'Nwestern St',
-  'FGCU',
-  'Western Ky',
-
-  'Indiana',
-  'Miami (Fl)',
-  'Marquette',
-  'Syracuse',
-  'UNLV',
-  'Butler',
-  'Illinois',
-  'NC State',
-  'Temple',
-  'Colorado',
-  'Bucknell',
-  'California',
-  'Montana',
-  'Davidson',
-  'Pacific',
-  'Play-In E'
-]
-
-require File.expand_path('../lib/lazy_ncaa', __FILE__)
+require_relative 'teams'
+require_relative 'lib/lazy_ncaa'
+require 'base64'
 
 def generate_tournament
   ok = false
@@ -76,10 +8,10 @@ def generate_tournament
   tournament = nil
   while not ok
     begin
-      tournament = Tournament.new
+      tournament = LazyNcaa::Tournament.new
       tournament.play
       ok = true
-    rescue InvalidGameException
+    rescue LazyNcaa::InvalidGameException
       bad_tournaments += 1
       # print "invalid game!\n"
     rescue NoMethodError => e
