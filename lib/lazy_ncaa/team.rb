@@ -8,7 +8,8 @@ module LazyNcaa
       @seed
     end
     def to_s
-      "(#{(@seed.to_s)[0..1].rjust(2)}) #{@name[0..9].ljust(10)}"
+      width = 14
+      "(#{(@seed.to_s)[0..1].rjust(2)}) #{@name[0..width].ljust(width+1)}"
     end
   end
 end
