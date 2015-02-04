@@ -16,8 +16,16 @@ RSpec.describe LazyNcaa::History do
       }
     end
 
-    it 'returns the wins for each team' do
-      expect(described_class.all(1, 3, 14)).to eq([3, 1])
+    context 'team A is seeded better than team B' do
+      it 'returns the wins for each team' do
+        expect(described_class.all(1, 3, 14)).to eq([3, 1])
+      end
+    end
+
+    context 'team A is seeded worse than team B' do
+      it 'returns the correct wins for each team' do
+        expect(described_class.all(1, 14, 3)).to eq([1, 3])
+      end
     end
   end
 end
