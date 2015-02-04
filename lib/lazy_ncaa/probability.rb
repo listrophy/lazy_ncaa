@@ -169,7 +169,8 @@ module LazyNcaa
     }
 
     # return probability that seed_a will win
-    def self.ask(round, seed_a, seed_b)
+    def self.ask(round, team_a, team_b)
+      seed_a, seed_b = team_a.seed, team_b.seed
       if seed_a == seed_b
         0.5
       else
