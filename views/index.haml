@@ -2,6 +2,7 @@
 %html
   %head
     %title NCAA Bracket Generator
+    %link{rel: 'stylesheet', type: 'text/css', href: 'style.css'}
   %body
     %h1 NCAA Bracket Generator
     %p
@@ -12,9 +13,7 @@
       It's open source, so check out the (horribly neglected)
       %a{:href => 'https://github.com/listrophy/lazy_ncaa'} source code.
     %p Here are your results! (Refresh for a newly generated bracket)
-    %pre
-      %code
-        = @tournament
+    = @tournament
     :plain
       <script type="text/javascript">
         var picks = '#{Base64.encode64(@tournament.to_id).strip}';

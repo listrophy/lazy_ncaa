@@ -27,27 +27,34 @@ module LazyNcaa
       @teams[5][0]
     end
 
+    def region
+      %w(Midwest West East South)[@index]
+    end
+
     def to_s
-      %Q{
-  BRACKET #{@index+1}
-  #{@teams[1][0] }
-  #{@teams[1][1] } #{@teams[2][0]}
-  #{@teams[1][2] } #{@teams[2][1]}
-  #{@teams[1][3] }                 #{@teams[3][0]}
-  #{@teams[1][4] }                 #{@teams[3][1]}
-  #{@teams[1][5] } #{@teams[2][2]}
-  #{@teams[1][6] } #{@teams[2][3]}
-  #{@teams[1][7] }                               #{@teams[4][0]}
-                                                             #{@teams[5][0]}
-  #{@teams[1][8] }                               #{@teams[4][1]}
-  #{@teams[1][9] } #{@teams[2][4]}
-  #{@teams[1][10]} #{@teams[2][5]}
-  #{@teams[1][11]}                 #{@teams[3][2]}
-  #{@teams[1][12]}                 #{@teams[3][3]}
-  #{@teams[1][13]} #{@teams[2][6]}
-  #{@teams[1][14]} #{@teams[2][7]}
-  #{@teams[1][15]}
-  }
+      out = ''
+      out << "<h2>#{region} Bracket</h2>\n"
+      out << "<div class='bracket'>\n"
+      (1..4).each do |round|
+        out << "<ul class='round round-#{round}'>\n"
+
+        out << "<li class='spacer'>&nbsp;</li>\n"
+        @teams[round].each_slice(2) do |top, bottom|
+          out << "<li class='game game-top'>#{top}</li>\n"
+          out << "<li class='game game-spacer'>&nbsp;</li>\n"
+          out << "<li class='game game-bottom'>#{bottom}</li>\n"
+          out << "<li class='spacer'>&nbsp;</li>\n"
+        end
+        out << "</ul>\n"
+      end
+
+      out << "<ul class='round round-5'>\n"
+      out << "<li class='spacer'>&nbsp;</li>\n"
+      out << "<li class='game game-top'>#{@teams[5][0]}</li>\n"
+      out << "<li class='spacer'>&nbsp;</li>\n"
+      out << "</ul>\n"
+      out << "</div>\n"
+      out
     end
 
     def to_id

@@ -9,7 +9,7 @@ module LazyNcaa
     end
     def to_s
       width = 14
-      "(#{(@seed.to_s)[0..1].rjust(2)}) #{@name[0..width].ljust(width+1)}"
+      "#{(@seed.to_s)[0..1].rjust(2)} #{@name[0..width].ljust(width+1)}"
     end
   end
 end

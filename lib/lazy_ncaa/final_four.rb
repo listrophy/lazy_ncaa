@@ -12,15 +12,45 @@ module LazyNcaa
       @winner  = Matchup.new(6, @team_ab, @team_cd).winner
     end
     def to_s
-      %Q{
+      out = ''
+      out << "<h2>Final Four</h2>\n"
+      out << "<div class='bracket'>\n"
 
-  FINAL FOUR
-  #{@team_a }
-  #{@team_b } #{@team_ab}
-                                    #{@winner}
-  #{@team_c } #{@team_cd}
-  #{@team_d }
-  }
+      out << "<ul class='round round-1'>\n"
+      out << "<li class='spacer'>&nbsp;</li>\n"
+
+      out << "<li class='game game-top'>#{@team_a}</li>\n"
+      out << "<li class='game game-spacer'>&nbsp;</li>\n"
+      out << "<li class='game game-bottom'>#{@team_b}</li>\n"
+
+      out << "<li class='spacer'>&nbsp;</li>\n"
+
+      out << "<li class='game game-top'>#{@team_c}</li>\n"
+      out << "<li class='game game-spacer'>&nbsp;</li>\n"
+      out << "<li class='game game-bottom'>#{@team_d}</li>\n"
+
+      out << "<li class='spacer'>&nbsp;</li>\n"
+      out << "</ul>\n"
+
+      out << "<ul class='round round-2'>\n"
+      out << "<li class='spacer'>&nbsp;</li>\n"
+
+      out << "<li class='game game-top'>#{@team_ab}</li>\n"
+      out << "<li class='game game-spacer'>&nbsp;</li>\n"
+      out << "<li class='game game-bottom'>#{@team_cd}</li>\n"
+
+      out << "<li class='spacer'>&nbsp;</li>\n"
+      out << "</ul>\n"
+
+      out << "<ul class='round round-3'>\n"
+      out << "<li class='spacer'>&nbsp;</li>\n"
+      out << "<li class='game game-top'>#{@winner}</li>\n"
+      out << "<li class='spacer'>&nbsp;</li>\n"
+      out << "</ul>\n"
+
+      out << "</div>\n"
+
+      out
     end
 
     def to_id
